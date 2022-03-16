@@ -13,7 +13,7 @@ https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/int
 */
 
 
-// The Smallest Common Multiple is the smallest number which can be divided evenly by two numbers
+// The Smallest Common Multiple is the smallest number which can be divided evenly by two numbers 
 
 const getSCM = (num1, num2) => {
 
