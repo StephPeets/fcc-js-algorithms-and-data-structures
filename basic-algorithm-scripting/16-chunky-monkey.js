@@ -8,9 +8,6 @@ https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/bas
 
 */
 
-
-
-
 function chunkArrayInGroups(arr, size) {
   let chunkyArr = [];
   let leftOverChunk = arr.length % size;
@@ -26,8 +23,8 @@ function chunkArrayInGroups(arr, size) {
   return chunkyArr;
 }
 
-console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
-console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4));
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2), `  <-- Answer s/b: [ [ 'a', 'b' ], [ 'c', 'd' ] ]\n`);
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), `  <-- Answer s/b: [ [ 0, 1, 2, 3 ], [ 4, 5, 6, 7 ], [ 8 ] ]\n`); // 
 console.log(
-  chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], 3)
-);
+  chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], 3) // 
+  , `  <-- Answer s/b: [ [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ], [ 9, 10, 11 ], [ 12, 13 ] ]\n`);

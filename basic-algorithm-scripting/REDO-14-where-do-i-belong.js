@@ -17,14 +17,11 @@ https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/bas
 
 
 function getIndexToIns(arr, num) {
-    arr.push(num)
-  
-    // TODO: REMEMBER THIS SORT METHOD
-    arr = arr.sort((a, b) => a - b);
-    
-    console.log(arr)
-    return arr.indexOf(num);
-  }
+  let receivingArr = arr;
+  receivingArr.push(num)
+  receivingArr = receivingArr.sort((a, b) => a - b);
+  return receivingArr.indexOf(num);
+}
   
   console.log(getIndexToIns([3, 10, 5], 3),
   getIndexToIns([5, 3, 20, 3], 5),
