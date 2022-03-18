@@ -15,30 +15,72 @@ https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/int
 
 // The Smallest Common Multiple is the smallest number which can be divided evenly by two numbers 
 
-const getSCM = (num1, num2) => {
 
-  let maxNum = Math.max(num1, num2)
-  let minNum = Math.min(num1, num2);
-  let gcm = maxNum * minNum;
-  for (let i = maxNum; i <= gcm; i += maxNum) {
-    if (i % minNum === 0) {
-      return i;
-    }
-  }
-}
 
-function smallestCommons(arr) {
-  let max = Math.max(...arr);
-  let min = Math.min(...arr);
-  let scm = getSCM(...arr);
 
-  for (let i = min; i <= max; i++) {
-    if (scm % i !== 0) {
-      scm = getSCM(scm, i);
-    }
-  }
 
-  return scm;
-}
 
-console.log(smallestCommons([18,5]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const getSCM = (num1, num2) => {
+
+//   let maxNum = Math.max(num1, num2)
+//   let minNum = Math.min(num1, num2);
+//   let gcm = maxNum * minNum;
+//   for (let i = maxNum; i <= gcm; i += maxNum) {
+//     if (i % minNum === 0) {
+//       return i;
+//     }
+//   }
+// }
+
+// function smallestCommons(arr) {
+//   let max = Math.max(...arr);
+//   let min = Math.min(...arr);
+//   let scm = getSCM(...arr);
+
+//   for (let i = min; i <= max; i++) {
+//     if (scm % i !== 0) {
+//       scm = getSCM(scm, i);
+//     }
+//   }
+
+//   return scm;
+// }
+
+// console.log(smallestCommons([18,5]));

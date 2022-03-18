@@ -39,6 +39,14 @@ function urlSlug(title) {
 console.log(urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone"));
 console.log(urlSlug(" Winter Is  Coming"));
 
+
+
+
+
+
+
+
+
 // ANSWER BELOW:
 
 // function urlSlug(title) {
