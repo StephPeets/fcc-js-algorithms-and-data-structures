@@ -16,42 +16,23 @@ The output should be all lower-cased letters
 
 The output should not have any spaces
 
-*/
+https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/apply-functional-programming-to-convert-strings-to-url-slugs
 
-// REDO: complete using regex and an additional method or two (not replace/replaceAll)
+*/
 
 // Only change code below this line
 function urlSlug(title) {
     let finalTitle = [];
     let titleToUrl = title
       .toLowerCase()
+      .trim()
       .split(" ")
-    for (let i = 0; i < titleToUrl.length; i++) {
-     if (titleToUrl[i].length) {
-       finalTitle.push(titleToUrl[i])
-     }
-    }
+      .filter(word => word.length !== 0)
+      .join("-")
 
-    return finalTitle.join("-");
+    return titleToUrl;
     }
 // Only change code above this line
 
 console.log(urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone"));
 console.log(urlSlug(" Winter Is  Coming"));
-
-
-
-
-
-
-
-
-
-// ANSWER BELOW:
-
-// function urlSlug(title) {
-
-//   let outputStr = title.toLowerCase().trim().split(" ").filter(word => word.length > 0).join("-");
-
-//   return outputStr;
-// }
