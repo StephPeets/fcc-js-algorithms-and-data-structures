@@ -22,8 +22,9 @@ function fib(n) {
 
 function fiboEvenSum(n) {
     let output = 0;
+    // loop through fib numbers up through n
     for (let i = 1; fib(i) <= n; i++) {
-        
+        // filter out odd numbers
         if (fib(i) % 2 === 0) {
             output += fib(i);
         }

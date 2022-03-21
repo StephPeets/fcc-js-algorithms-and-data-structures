@@ -46,19 +46,68 @@ https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/jav
 
 */
 
+const valuePerUnitOfCurrency = [0.01, 0.05, 0.1, 0.25, 1, 5, 10, 20, 100];
+
+let changeStatusArr = [
+  { status: "INSUFFICIENT_FUNDS", change: [] },
+  { status: "CLOSED", change: [] },
+  { status: "OPEN", change: [] },
+];
+
 function checkCashRegister(price, cash, cid) {
-  let change;
-  return change;
+  let change = Math.round(100 * (cash - price)) / 100;
+  let totalCashInDrawer = cid.map((arr) => arr[1]).reduce((a, b) => a + b);
+
+  if (change === totalCashInDrawer) {
+    changeStatusArr[1].change = cid;
+    return changeStatusArr[1];
+  }
+
+  let changeOutArray = cid.map((arr) => [arr[0], 0]);
+  let unitsOfChangeArray = cid.map((arr) => [
+    arr[0],
+    Math.round(arr[1] / valuePerUnitOfCurrency[cid.indexOf(arr)]),
+  ]);
+
+  for (let i = valuePerUnitOfCurrency.length - 1; i >= 0; i--) {
+    while (
+      change >= valuePerUnitOfCurrency[i] &&
+      unitsOfChangeArray[i][1] > 0
+    ) {
+      change -= valuePerUnitOfCurrency[i];
+      change = Math.round(100 * change) / 100;
+      unitsOfChangeArray[i][1] -= 1;
+      changeOutArray[i][1] += 1;
+    }
+  }
+
+  changeOutArray = changeOutArray
+    .map((arr) => [
+      arr[0],
+      (arr[1] *= valuePerUnitOfCurrency[changeOutArray.indexOf(arr)]),
+    ])
+    .filter((arr) => arr[1] > 0);
+
+  // Add changeOutArray to changeStatusArr
+  if (change !== 0) {
+    console.log(change);
+    return changeStatusArr[0];
+  } else {
+    changeStatusArr[2].change = changeOutArray.reverse();
+    return changeStatusArr[2];
+  }
 }
 
-checkCashRegister(19.5, 20, [
-  ["PENNY", 1.01],
-  ["NICKEL", 2.05],
-  ["DIME", 3.1],
-  ["QUARTER", 4.25],
-  ["ONE", 90],
-  ["FIVE", 55],
-  ["TEN", 20],
-  ["TWENTY", 60],
-  ["ONE HUNDRED", 100],
-]);
+console.log(
+  checkCashRegister(3.26, 100, [
+    ["PENNY", 1.01],
+    ["NICKEL", 2.05],
+    ["DIME", 3.1],
+    ["QUARTER", 4.25],
+    ["ONE", 90],
+    ["FIVE", 55],
+    ["TEN", 20],
+    ["TWENTY", 60],
+    ["ONE HUNDRED", 100],
+  ])
+);
