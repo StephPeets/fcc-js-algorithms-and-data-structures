@@ -16,7 +16,7 @@ function destroyer(arr) {
   // puts all arguments into 2D array
   let newArr = [...arguments];
 
-  // removes inital array from newArr and give it its own variable
+  // removes inital array from newArr and gives it its own variable
   let initialArr = newArr.shift();
 
   // iterates through the initial array and filters out items that are also found in newArr
