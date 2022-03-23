@@ -1,6 +1,7 @@
 /*
+
+https://projecteuler.net/problem=1
 https://www.freecodecamp.org/learn/coding-interview-prep/project-euler/problem-1-multiples-of-3-and-5
-https://www.projecteuler.net
 
 Problem 1: Multiples of 3 and 5
 
