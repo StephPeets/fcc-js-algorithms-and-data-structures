@@ -12,7 +12,24 @@
 // Create a function that takes two or more arrays and returns an array of their symmetric difference.
 // The returned array must contain only unique values (no duplicates).
 
-// LATEST SOLUTION (March 21, 2022)
+// LATEST SOLUTION
+
+const findDiff = (arr1, arr2) => [
+  ...arr1.filter((num) => !arr2.includes(num)),
+  ...arr2.filter((num) => !arr1.includes(num)),
+];
+
+function sym(args) {
+  let diff = Object.values([...arguments]);
+
+  diff = new Set(diff.reduce(findDiff));
+  return [...diff];
+}
+
+console.log(sym([1, 1, 2, 5, 7], [2, 3, 4, 5, 6], [5, 1, 2, 9, 8]));
+
+
+// SOLUTION (March 21, 2022)
 
 let diffOf2Arrs = (arr1, arr2) => {
   let arr = [];
