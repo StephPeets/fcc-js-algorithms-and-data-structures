@@ -12,7 +12,7 @@
 // Create a function that takes two or more arrays and returns an array of their symmetric difference.
 // The returned array must contain only unique values (no duplicates).
 
-// LATEST SOLUTION
+// LATEST SOLUTION (April 4, 2022)
 
 const findDiff = (arr1, arr2) => [
   ...arr1.filter((num) => !arr2.includes(num)),
@@ -31,36 +31,36 @@ console.log(sym([1, 1, 2, 5, 7], [2, 3, 4, 5, 6], [5, 1, 2, 9, 8]));
 
 // SOLUTION (March 21, 2022)
 
-let diffOf2Arrs = (arr1, arr2) => {
-  let arr = [];
-  for (let num of arr1) {
-    if (!arr2.includes(num)) {
-      arr.push(num);
-    }
-  }
-  for (let num of arr2) {
-    if (!arr1.includes(num)) {
-      arr.push(num);
-    }
-  }
-  return arr;
-};
+// let diffOf2Arrs = (arr1, arr2) => {
+//   let arr = [];
+//   for (let num of arr1) {
+//     if (!arr2.includes(num)) {
+//       arr.push(num);
+//     }
+//   }
+//   for (let num of arr2) {
+//     if (!arr1.includes(num)) {
+//       arr.push(num);
+//     }
+//   }
+//   return arr;
+// };
 
-function sym(args) {
-  let arr = [...arguments];
-  let outputArr = diffOf2Arrs(arr[0], arr[1]); //;
+// function sym(args) {
+//   let arr = [...arguments];
+//   let outputArr = diffOf2Arrs(arr[0], arr[1]); //;
 
-  for (let i = 2; i < arr.length; i++) {
-    outputArr = diffOf2Arrs(outputArr, arr[i]).sort((a, b) => a - b);
-  }
+//   for (let i = 2; i < arr.length; i++) {
+//     outputArr = diffOf2Arrs(outputArr, arr[i]).sort((a, b) => a - b);
+//   }
 
-  for (let num of outputArr) {
-    if (outputArr.indexOf(num) !== outputArr.lastIndexOf(num)) {
-      outputArr.splice(outputArr.indexOf(num), 1);
-    }
-  }
-  return outputArr;
-}
+//   for (let num of outputArr) {
+//     if (outputArr.indexOf(num) !== outputArr.lastIndexOf(num)) {
+//       outputArr.splice(outputArr.indexOf(num), 1);
+//     }
+//   }
+//   return outputArr;
+// }
 
 console.log(sym([1, 2, 3], [5, 2, 1, 4])); // should return [3, 4, 5]
 
